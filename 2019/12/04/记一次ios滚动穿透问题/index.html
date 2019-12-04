@@ -6,14 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/12 | ZWB的博客</title>
+  <title>记一次ios滚动穿透问题 | ZWB的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="ZWB">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZWB的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;12&#x2F;index.html">
+  <meta name="description" content="记一次移动端滚动穿透问题刚出现这个问题的时候，我直接给body写了如下代码body {    height: 100%;    overflow:hidden;}因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”  iOS ignores over">
+<meta name="keywords" content="ZWB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次ios滚动穿透问题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="ZWB的博客">
+<meta property="og:description" content="记一次移动端滚动穿透问题刚出现这个问题的时候，我直接给body写了如下代码body {    height: 100%;    overflow:hidden;}因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”  iOS ignores over">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-04T14:38:35.615Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ZWB的博客" type="application/atom+xml">
@@ -156,103 +159,180 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-记一次ios滚动穿透问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      记一次ios滚动穿透问题
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/04/%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/" class="archive-article-date">
+
+        
+        <a href="/2019/12/04/%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/" class="archive-article-date">
   	<time datetime="2019-12-04T14:34:23.457Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/04/%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/">记一次ios滚动穿透问题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="记一次移动端滚动穿透问题"><a href="#记一次移动端滚动穿透问题" class="headerlink" title="记一次移动端滚动穿透问题"></a>记一次移动端滚动穿透问题</h4><p>刚出现这个问题的时候，我直接给body写了如下代码<br>body {<br>    height: 100%;<br>    overflow:hidden;<br>}<br>因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了<br>在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”<br><br></p>
+<blockquote>
+<p>iOS ignores overflow: hidden on the viewport.<br>The browser reserves the right to show the content as a whole, no matter what you declare in the CSS.<br>This is intentional and not a bug, and continues to be the case in iOS 7 and 8.<br>There is nothing anyone can do about it, either - it can’t be turned off.</p>
+</blockquote>
+<p>但是现在想实现在移动端滑动弹窗时不触发滚动穿透，开始是这么做的<br>首先，我们对window的scroll进行监听，当触发scroll滚动时，我们获取当前滚动的srcoll的值，<br>此时不能对html，body设置宽度100%，否则无法获取scroll，设置高度为auto就行，<br>当我们触发弹框展示时，我们通过获取到的scroll对body进行绝对定位，让其脱离文档流进行定位，达到不可滑动的目的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> $scrollTop = <span class="built_in">document</span>.documentElement.scrollTop || <span class="built_in">window</span>.pageYOffset || <span class="built_in">document</span>.body.scrollTop;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.style.cssText += <span class="string">`position:fixed;top:-<span class="subst">$&#123;$scrollTop&#125;</span>px`</span>;</span></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>接下来触发弹框关闭，此时要恢复body的滚动状态</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> body = <span class="built_in">document</span>.body;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> top = body.style.top;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">body.style.position = <span class="string">'static'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.scrollTop = <span class="built_in">document</span>.documentElement.scrollTop = -<span class="built_in">parseInt</span>(top);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">body.style.top = <span class="string">''</span>;</span></pre></td></tr></table></figure>
 
+<p>在做项目的过程中，由于项目中要求header部分以及filter部分需要在srcoll&gt;0的时候脱离文档流一直悬浮于顶部，scroll为0的时候又要将header部分以及filter部分恢复到之前的文档流，因此我在这里做处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (scrollTop &gt; <span class="number">0</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    $(<span class="string">"header.util"</span>).addClass(<span class="string">"util--sticky"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    $(<span class="string">".sort_by_filter"</span>).addClass(<span class="string">"sort_by_filte--sticky"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;<span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    $(<span class="string">"header.util"</span>).removeClass(<span class="string">"util--sticky"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    $(<span class="string">".sort_by_filter"</span>).removeClass(<span class="string">"sort_by_filte--sticky"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>但是每次触发弹框展示时，由于对body进行了fixed定位，导致每次scrollTop都会初始化为0，<br>造成header部分以及filter部分刚添加class又被强制删除掉了对用的class</p>
+<p>后来对代码又做了改造处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">定义全局变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.filterModal = <span class="literal">false</span>; <span class="comment">// 判断时候弹框展示</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.sort_by_filter_ul'</span>).on(<span class="string">'click'</span>,<span class="string">'.dropdown-group'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(!$(<span class="keyword">this</span>).hasClass(<span class="string">'filter-group'</span>))&#123;<span class="comment">// 判断当弹框展示时</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">window</span>.filterModal = <span class="literal">true</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (scrollTop &gt; <span class="number">0</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    $(<span class="string">"header.util"</span>).addClass(<span class="string">"util--sticky"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    $(<span class="string">".sort_by_filter"</span>).addClass(<span class="string">"sort_by_filte--sticky"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(filterModal)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 弹框展示，什么都不做，此时header部分以及filter部分会被保留</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    $(<span class="string">"header.util"</span>).removeClass(<span class="string">"util--sticky"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    $(<span class="string">".sort_by_filter"</span>).removeClass(<span class="string">"sort_by_filte--sticky"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>当弹框关闭时，做以下处理，将window.filterModal重新赋值为false,此时body回归文档流，<br>scrollTop的值此时不为0，header部分以及filter部分会被保留弹框展示时的状态</p>
+<p>以上是当弹框是单个时，我对滚动穿透做的处理，由于项目中弹框展示时是多个联动，所以当每次展示新弹框时，都会触发body变成fixed脱离文档流造成scrollTop为0，为了防止切换时造成的这个问题，我做了如下处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> $scrollTop = <span class="built_in">document</span>.documentElement.scrollTop || <span class="built_in">window</span>.pageYOffset || <span class="built_in">document</span>.body.scrollTop;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">median = $scrollTop == <span class="number">0</span> ? median : $scrollTop;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.style.cssText += <span class="string">`position:fixed;top:-<span class="subst">$&#123;median&#125;</span>px`</span>;</span></pre></td></tr></table></figure>
+
+<p>设置一个中间值median作为scrollTop的替换值，当每次切换造成弹框展示，body变成fixed时，取上次median为准，如此就可以解决切换弹框出现，造成的scrollTop为0时触发删除对应class的问题</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      <!-- <span id="busuanzi_container_page_pv">
+        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      </span> -->
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/04/%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/03/%E6%A0%B9%E6%8D%AE%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F%E5%BE%97%E5%88%B0%E5%91%A8%E5%B2%81%E5%B9%B4%E9%BE%84/" class="archive-article-date">
-  	<time datetime="2019-12-03T12:05:01.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/03/%E6%A0%B9%E6%8D%AE%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F%E5%BE%97%E5%88%B0%E5%91%A8%E5%B2%81%E5%B9%B4%E9%BE%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">根据出生日期得到周岁年龄</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/03/%E6%A0%B9%E6%8D%AE%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F%E5%BE%97%E5%88%B0%E5%91%A8%E5%B2%81%E5%B9%B4%E9%BE%84/">根据出生日期得到周岁年龄</a>
-    </h1>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/03/js-blog/" class="archive-article-date">
-  	<time datetime="2019-12-03T08:24:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/03/js-blog/">js-blog</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -283,8 +363,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
