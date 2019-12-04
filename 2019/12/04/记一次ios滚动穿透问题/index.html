@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>记一次ios滚动穿透问题 | ZWB的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记一次移动端滚动穿透问题刚出现这个问题的时候，我直接给body写了如下代码body {    height: 100%;    overflow:hidden;}因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”  iOS ignores over">
+  <meta name="description" content="记一次移动端滚动穿透问题刚出现这个问题的时候，我直接给body写了如下代码body {    height: 100%;    overflow:hidden;}因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”">
 <meta name="keywords" content="ZWB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次ios滚动穿透问题">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="ZWB的博客">
-<meta property="og:description" content="记一次移动端滚动穿透问题刚出现这个问题的时候，我直接给body写了如下代码body {    height: 100%;    overflow:hidden;}因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”  iOS ignores over">
+<meta property="og:description" content="记一次移动端滚动穿透问题刚出现这个问题的时候，我直接给body写了如下代码body {    height: 100%;    overflow:hidden;}因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-04T14:38:35.615Z">
+<meta property="og:updated_time" content="2019-12-04T14:39:58.583Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ZWB的博客" type="application/atom+xml">
@@ -179,7 +179,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="记一次移动端滚动穿透问题"><a href="#记一次移动端滚动穿透问题" class="headerlink" title="记一次移动端滚动穿透问题"></a>记一次移动端滚动穿透问题</h4><p>刚出现这个问题的时候，我直接给body写了如下代码<br>body {<br>    height: 100%;<br>    overflow:hidden;<br>}<br>因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了<br>在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”<br><br></p>
+        <h4 id="记一次移动端滚动穿透问题"><a href="#记一次移动端滚动穿透问题" class="headerlink" title="记一次移动端滚动穿透问题"></a>记一次移动端滚动穿透问题</h4><p>刚出现这个问题的时候，我直接给body写了如下代码<br>body {<br>    height: 100%;<br>    overflow:hidden;<br>}<br>因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了<br>在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”</p>
+<a id="more"></a>
 <blockquote>
 <p>iOS ignores overflow: hidden on the viewport.<br>The browser reserves the right to show the content as a whole, no matter what you declare in the CSS.<br>This is intentional and not a bug, and continues to be the case in iOS 7 and 8.<br>There is nothing anyone can do about it, either - it can’t be turned off.</p>
 </blockquote>
