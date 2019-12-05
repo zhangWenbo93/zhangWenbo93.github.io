@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://zhangwenbo93.github.io">
   <title>记一次移动端滚动穿透问题 | ZWB的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记一次移动端滚动穿透问题刚出现这个问题的时候，我直接给body写了如下代码 1body &amp;#123;2    height: 100%;3    overflow:hidden;4&amp;#125;">
+  <meta name="description" content="刚出现这个滚动穿透问题的时候，我直接给body写了如下代码 1body &amp;#123;2    height: 100%;3    overflow:hidden;4&amp;#125;">
 <meta name="keywords" content="移动端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次移动端滚动穿透问题">
 <meta property="og:url" content="https:&#x2F;&#x2F;zhangwenbo93.github.io&#x2F;2019&#x2F;12&#x2F;04&#x2F;%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="ZWB的博客">
-<meta property="og:description" content="记一次移动端滚动穿透问题刚出现这个问题的时候，我直接给body写了如下代码 1body &amp;#123;2    height: 100%;3    overflow:hidden;4&amp;#125;">
+<meta property="og:description" content="刚出现这个滚动穿透问题的时候，我直接给body写了如下代码 1body &amp;#123;2    height: 100%;3    overflow:hidden;4&amp;#125;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-05T02:52:11.949Z">
+<meta property="og:updated_time" content="2019-12-05T07:22:34.484Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ZWB的博客" type="application/atom+xml">
@@ -170,7 +170,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h4 id="记一次移动端滚动穿透问题"><a href="#记一次移动端滚动穿透问题" class="headerlink" title="记一次移动端滚动穿透问题"></a>记一次移动端滚动穿透问题</h4><p>刚出现这个问题的时候，我直接给body写了如下代码</p>
+<p>刚出现这个滚动穿透问题的时候，我直接给body写了如下代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">body &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    height: 100%;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    overflow:hidden;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>因为开始是在mac端进行开发，所以mac上的Chrome看起来并没有什么问题，提测之后问题就来了<br>在iphone真机上发现overflow:hidden无效，查阅资料发现这是移动端浏览器本身的一个”特性”</p>
@@ -451,7 +451,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,7 +459,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">HTML5</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
