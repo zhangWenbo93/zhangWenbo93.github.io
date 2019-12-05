@@ -6,14 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhangwenbo93.github.io">
-  <title>ZWB的博客</title>
+  <title>记一次LocalForage的使用 | ZWB的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,编程,代码,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZWB的博客">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhangwenbo93.github.io&#x2F;index.html">
+  <meta name="description" content="LocalForage–与众不同的离线存储方式一般说到离线存储，一般想到的就是localStorage,而且localStorage有着简单的API,可以直接上手，但是相对的，localStorage自身一些缺点，例如：">
+<meta name="keywords" content="HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次LocalForage的使用">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhangwenbo93.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E8%AE%B0%E4%B8%80%E6%AC%A1LocalForage%E7%9A%84%E4%BD%BF%E7%94%A8&#x2F;index.html">
 <meta property="og:site_name" content="ZWB的博客">
+<meta property="og:description" content="LocalForage–与众不同的离线存储方式一般说到离线存储，一般想到的就是localStorage,而且localStorage有着简单的API,可以直接上手，但是相对的，localStorage自身一些缺点，例如：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-05T07:15:00.267Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ZWB的博客" type="application/atom+xml">
@@ -146,16 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-记一次LocalForage的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-记一次LocalForage的使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1LocalForage%E7%9A%84%E4%BD%BF%E7%94%A8/">记一次LocalForage的使用</a>
+    <h1 class="article-title" itemprop="name">
+      记一次LocalForage的使用
     </h1>
   
 
@@ -169,334 +170,61 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="LocalForage–与众不同的离线存储方式"><a href="#LocalForage–与众不同的离线存储方式" class="headerlink" title="LocalForage–与众不同的离线存储方式"></a>LocalForage–与众不同的离线存储方式</h2><p>一般说到离线存储，一般想到的就是<strong>localStorage</strong>,而且localStorage有着简单的API,可以直接上手，但是相对的，localStorage自身一些缺点，例如：</p>
-        
-          <a class="article-more-a" href="/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1LocalForage%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      <!-- <span id="busuanzi_container_page_pv">
-        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      </span> -->
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">HTML5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1LocalForage%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-记一次ios-sticky问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1ios-sticky%E9%97%AE%E9%A2%98/">记一次ios sticky问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1ios-sticky%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2019-12-05T03:06:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次开发系统为ios10.x版本，开发过程中头部导航用到了position: sticky属性，<br>需要注意以下几点：<br>1.由于此属性存在兼容性问题，所以在书写时，需要写成如下格式：</p>
-        
-          <a class="article-more-a" href="/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1ios-sticky%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      <!-- <span id="busuanzi_container_page_pv">
-        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      </span> -->
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">HTML5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1ios-sticky%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-根据出生日期计算周岁年龄" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/05/%E6%A0%B9%E6%8D%AE%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F%E8%AE%A1%E7%AE%97%E5%91%A8%E5%B2%81%E5%B9%B4%E9%BE%84/">根据出生日期计算周岁年龄</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/05/%E6%A0%B9%E6%8D%AE%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F%E8%AE%A1%E7%AE%97%E5%91%A8%E5%B2%81%E5%B9%B4%E9%BE%84/" class="archive-article-date">
-  	<time datetime="2019-12-05T02:24:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="JS日期系列：根据出生日期-得到周岁年龄"><a href="#JS日期系列：根据出生日期-得到周岁年龄" class="headerlink" title="JS日期系列：根据出生日期 得到周岁年龄"></a>JS日期系列：根据出生日期 得到周岁年龄</h4>
-        
-          <a class="article-more-a" href="/2019/12/05/%E6%A0%B9%E6%8D%AE%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F%E8%AE%A1%E7%AE%97%E5%91%A8%E5%B2%81%E5%B9%B4%E9%BE%84/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      <!-- <span id="busuanzi_container_page_pv">
-        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      </span> -->
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/05/%E6%A0%B9%E6%8D%AE%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F%E8%AE%A1%E7%AE%97%E5%91%A8%E5%B2%81%E5%B9%B4%E9%BE%84/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-记一次ios滚动穿透问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/04/%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/">记一次移动端滚动穿透问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/04/%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2019-12-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h4 id="记一次移动端滚动穿透问题"><a href="#记一次移动端滚动穿透问题" class="headerlink" title="记一次移动端滚动穿透问题"></a>记一次移动端滚动穿透问题</h4><p>刚出现这个问题的时候，我直接给body写了如下代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">body &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    height: 100%;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    overflow:hidden;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/12/04/%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      <!-- <span id="busuanzi_container_page_pv">
-        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      </span> -->
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">HTML5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/04/%E8%AE%B0%E4%B8%80%E6%AC%A1ios%E6%BB%9A%E5%8A%A8%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/js-blog/">开通了个人博客，记录点滴生活</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/03/js-blog/" class="archive-article-date">
-  	<time datetime="2019-12-03T08:24:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
+<a id="more"></a>
+<ol>
+<li>存储容量最大为5M，处理某些大文本时无法处理</li>
+<li>仅支持字符串，如果想对对象或者数组进行存储，需要使用JSON.stringify和JSON.parse方法互相转，用的多了显得的代码冗余</li>
+<li>读取同步，处理小数据还好说，要是处理base64存储格式的数据，会出现些许延迟的情况,响应速度慢</li>
+</ol>
+<p>但是LocalForage的出现，有效的可以规避以上localStorage带来的缺陷，而且LocalForage的API同样简单明了，自身有一套存储逻辑，能更好的时应当前浏览器。</p>
 <blockquote>
-<p>今天开通了自己的博客，想记录下自己日常中的生活点滴，以前对于自己的一些东西，生活也好，工作中的问题也罢，只是简单的记录在了本地markdown中，时间长了，难免有些杂糅，遂想着通过博客的形式，简单的对自己做一个校验，只希望往后余生，不负自己。</p>
+<p>比如我们从后台获取了一个数组列表，相对其进行存储，我们可以使用LocalForage这样写：</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// list存储</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userList = [ &#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">userName</span>: <span class="string">'Hanmeimei'</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">userName</span>: <span class="string">'LIli'</span>&#125; ];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">localForage.setItem(<span class="string">'userList'</span>, userList, res =&gt; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(result);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// list获取</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">localForage.getItem(<span class="string">'userList'</span>）</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>我们还可以对图片进行存储：<br><strong>前端请求二进制数据的时候需要设置数据响应格式：responseType的值为arraybuffer</strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'/api/img.json'</span>).then(<span class="function"><span class="params">res</span>=&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (res.code === <span class="number">1</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">// 保存的是二进制数据，如果用 localStorage 就无法实现</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        localForage.setItem(<span class="string">'photo'</span>, res.img, () =&gt; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">// 图片已保存，想怎么用都可以</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        &#125;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>相对图片进行获取时，可以说这样写：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">localForage.getItem(<span class="string">'photo'</span>, photo =&gt; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 获取到图片数据后，可以通过创建 data URI 或者其它方法来显示（URL.createObjectURL）</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(photo);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以下是我在项目中对localForage封装后的使用：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> LocalForage <span class="keyword">from</span> <span class="string">'localforage'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> CordovaSQLiteDriver <span class="keyword">from</span> <span class="string">'localforage-cordovasqlitedriver'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Storage</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  dbPromise</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">constructor</span>() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.dbPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">let</span> db</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">let</span> config = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        name: <span class="string">'_vuestorage'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        storeName: <span class="string">'_vuekv'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        driverOrder: [<span class="string">'sqlite'</span>, <span class="string">'indexeddb'</span>, <span class="string">'websql'</span>, <span class="string">'localstorage'</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">      LocalForage.defineDriver(CordovaSQLiteDriver).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        db = LocalForage.createInstance(config)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">      &#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        .then(<span class="function"><span class="params">()</span> =&gt;</span> db.setDriver(<span class="keyword">this</span>.getDriverOrder(config.driverOrder)))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">          resolve(db)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        &#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        .catch(<span class="function"><span class="params">reason</span> =&gt;</span> reject(reason))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">    &#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">  ready() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.dbPromise</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">  getDriverOrder(driverOrder) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> driverOrder.map(<span class="function">(<span class="params">driver</span>) =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">switch</span> (driver) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">case</span> <span class="string">'sqlite'</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">          <span class="keyword">return</span> CordovaSQLiteDriver._driver</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">case</span> <span class="string">'indexeddb'</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">          <span class="keyword">return</span> LocalForage.INDEXEDDB</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">case</span> <span class="string">'websql'</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">          <span class="keyword">return</span> LocalForage.WEBSQL</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">case</span> <span class="string">'localstorage'</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">          <span class="keyword">return</span> LocalForage.LOCALSTORAGE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">    &#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">get</span>(key) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.dbPromise.then(<span class="function"><span class="params">db</span> =&gt;</span> db.getItem(key))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">set</span>(key, value) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.dbPromise.then(<span class="function"><span class="params">db</span> =&gt;</span> db.setItem(key, value))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line">  remove(key) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">49</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.dbPromise.then(<span class="function"><span class="params">db</span> =&gt;</span> db.removeItem(key))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">50</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">51</span></pre></td><td class="code"><pre><span class="line">  clear() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">52</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.dbPromise.then(<span class="function"><span class="params">db</span> =&gt;</span> db.clear())</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">53</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">54</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">55</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> storage = <span class="keyword">new</span> Storage()</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>而且localForage支持ES6的Promises的写法，比如：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; storage &#125; <span class="keyword">from</span> <span class="string">'common/js/localforage'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象的存储</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">storage.set(<span class="string">'personal'</span>, data)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象的获取和后续处理</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">storage.get(<span class="string">'personal'</span>).then(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.positionCode = value.positionCode</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.status === <span class="number">0</span> &amp;&amp; value.positionCode !== <span class="number">0</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.isShow = <span class="literal">true</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.isShow = <span class="literal">false</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -510,7 +238,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">HTML5</a>
         		</li>
       		
 		</ul>
@@ -519,16 +247,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/03/js-blog/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zhangwenbo93.github.io/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1LocalForage%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/05/%E8%AE%B0%E4%B8%80%E6%AC%A1ios-sticky%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">记一次ios sticky问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -548,8 +335,14 @@
 
 
 
+  
 
   
+
+  
+
+  
+
   
 
 
@@ -580,8 +373,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
