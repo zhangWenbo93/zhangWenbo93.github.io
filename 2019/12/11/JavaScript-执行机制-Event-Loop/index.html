@@ -22,7 +22,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;zhangwenbo93.github.io&#x2F;images&#x2F;643.webp">
 <meta property="og:image" content="https:&#x2F;&#x2F;zhangwenbo93.github.io&#x2F;images&#x2F;644.webp">
 <meta property="og:image" content="https:&#x2F;&#x2F;zhangwenbo93.github.io&#x2F;images&#x2F;645.webp">
-<meta property="og:updated_time" content="2019-12-11T07:45:36.964Z">
+<meta property="og:updated_time" content="2019-12-11T08:11:17.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;zhangwenbo93.github.io&#x2F;images&#x2F;640.webp">
   
@@ -181,11 +181,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="关于JavaScript中的Event-Loop"><a href="#关于JavaScript中的Event-Loop" class="headerlink" title="关于JavaScript中的Event Loop"></a>关于JavaScript中的Event Loop</h4><p>JavaScript有执行和运行这两个不同的概念，执行一般指的是依赖环境，运行指的是JavaScript 的解析引擎。其中<strong>Event Loop</strong>是JavaScript的一种执行方式</p>
+        <h4 id="关于JavaScript中的Event-Loop"><a href="#关于JavaScript中的Event-Loop" class="headerlink" title="关于JavaScript中的Event Loop"></a>关于JavaScript中的Event Loop</h4><p>JavaScript有执行和运行这两个不同的概念，执行一般指的是依赖环境，运行指的是JavaScript 的解析引擎。其中<strong><font color="#dd0000">Event Loop</font></strong>是JavaScript的一种执行方式</p>
 <p>首先，JavaScript自身是单线程语言，所以所有的代码在执行的时候都是按照顺序一句一句的执行，是有意再说执行机制前，先大概了解下JavaScript的一些基本概念。</p>
 <a id="more"></a>
 <p><img src="/images/640.webp" alt="&#39;&#39;"></p>
-<p>所谓的Event Loop就是事件循环，结合上图，在JavaScript有一个主线程<strong>main thread</strong>和调用栈 <strong>call-stack</strong>(也称之为执行栈),所有的任务都会放到调用栈中等待主线程来执行。其中JavaScript的 <strong>Event Loop</strong>是一直伴随着整个源码文件生命周期，只要当前的JavaScript还在运行转态，那么其内部的这个循环机制就会一直循环，继续寻找队列(queue)里面能执行的任务(task)。</p>
+<p>所谓的Event Loop就是事件循环，结合上图，在JavaScript有一个主线程<strong><font color="#dd0000">main thread</font></strong>和调用栈 <strong><font color="#dd0000">call-stack</font></strong>(也称之为执行栈),所有的任务都会放到调用栈中等待主线程来执行。其中JavaScript的 <strong><font color="#dd0000">Event Loop</font></strong>是一直伴随着整个源码文件生命周期，只要当前的JavaScript还在运行转态，那么其内部的这个循环机制就会一直循环，继续寻找队列(queue)里面能执行的任务(task)。</p>
 <h4 id="任务-task-与队列-queue"><a href="#任务-task-与队列-queue" class="headerlink" title="任务(task)与队列(queue)"></a>任务(task)与队列(queue)</h4><p>在JavaScript中，我们可以认为每个语句就是一个任务(task),下面这段代码就可以理解成两个task</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'b'</span>);</span></pre></td></tr></table></figure>
 
@@ -212,9 +212,9 @@
 <p>示例：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ajax(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    url:www.Nealyang.com,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    data:prams,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    success:<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">console</span>.log(<span class="string">'请求成功!'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    error:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">console</span>.log(<span class="string">'请求失败~'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'这是一个同步任务'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> ajax 请求首先进入到 Event Table ，分别注册了onError和onSuccess回调函数。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="number">2.</span> 主线程执行同步任务：<span class="built_in">console</span>.log(<span class="string">'这是一个同步任务'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="number">3.</span> 主线程任务执行完毕，看Event Queue是否有待执行的 task,这里是不断地检查，只要主线程的task queue没有任务执行了，主线程就一直在这等着</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="number">4.</span> ajax 执行完毕，将回调函数push 到Event Queue。（步骤 <span class="number">3</span>、<span class="number">4</span> 没有先后顺序而言）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="number">5.</span> 主线程“终于”等到了Event Queue里有 task可以执行了，执行对应的回调任务。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="number">6.</span> 如此往复。</span></pre></td></tr></table></figure>
 
-<h4 id="宏任务-MacroTask-、微任务-MicroTask"><a href="#宏任务-MacroTask-、微任务-MicroTask" class="headerlink" title="宏任务(MacroTask)、微任务(MicroTask)"></a>宏任务(MacroTask)、微任务(MicroTask)</h4><p>JavaScript 的任务不仅仅分为同步任务和异步任务，同时从另一个维度，也分为了宏任务(MacroTask)和微任务(MicroTask)。</p>
-<p>先说说 MacroTask，所有的同步任务代码都是MacroTask（这么说其实不是很严谨，下面解释）,setTimeout、setInterval、I/O、UI Rendering 等都是宏任务。</p>
-<p>MicroTask，为什么说上述不严谨我却还是强调所有的同步任务都是 MacroTask 呢，因为我们仅仅需要记住几个 MicroTask 即可，排除法！别的都是 MacroTask。MicroTask 包括：Process.nextTick、Promise.then catch finally(注意我不是说 Promise)、MutationObserver。</p>
+<h4 id="宏任务-MacroTask-、微任务-MicroTask"><a href="#宏任务-MacroTask-、微任务-MicroTask" class="headerlink" title="宏任务(MacroTask)、微任务(MicroTask)"></a>宏任务(MacroTask)、微任务(MicroTask)</h4><p>JavaScript 的任务不仅仅分为同步任务和异步任务，同时从另一个维度，也分为了宏任务<strong><font color="#dd0000">(MacroTask)</font></strong>和微任务<strong><font color="#dd0000">(MicroTask)</font></strong>。</p>
+<p>先说说 MacroTask，所有的同步任务代码都是MacroTask（这么说其实不是很严谨，下面解释）,<strong>setTimeout、setInterval、I/O、UI Rendering</strong> 等都是宏任务。</p>
+<p>MicroTask，为什么说上述不严谨我却还是强调所有的同步任务都是 MacroTask 呢，因为我们仅仅需要记住几个 MicroTask 即可，排除法！别的都是 MacroTask。MicroTask 包括：<strong>Process.nextTick、Promise.then catch finally(注意不是说 Promise)、MutationObserver。</strong></p>
 <h4 id="浏览器环境下的-Event-Loop"><a href="#浏览器环境下的-Event-Loop" class="headerlink" title="浏览器环境下的 Event Loop"></a>浏览器环境下的 Event Loop</h4><p>当我们已经知道那些task是MicroTask ，除了那些别的都是 MacroTask 后，哪些是同步任务，哪些又是异步任务后，这里就应该彻底的梳理下JavaScript 的执行机制了。下面的执行机制都是在浏览器下执行的，不牵扯Node环境</p>
 <h4 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout"></a>setTimeout</h4><p>setTimeout 就是等多长时间来执行这个回调函数。setInterval 就是每隔多长时间来执行这个回调。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> startTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()-startTime);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;,<span class="number">1000</span>);</span></pre></td></tr></table></figure>
@@ -500,11 +500,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">移动端</a>
               </li>
             
             <div class="clearfix"></div>
