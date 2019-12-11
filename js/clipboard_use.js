@@ -6,7 +6,7 @@
     copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
     copyHtml += '  <i class="fa fa-globe"></i><span>copy</span>';
     copyHtml += '</button>';
-    $(".highlight .code").before(copyHtml);
+    $(".highlight table").before(copyHtml);
     new ClipboardJS('.btn-copy', {
       target: function (trigger) {
         return trigger.nextElementSibling;
